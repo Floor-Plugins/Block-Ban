@@ -1,4 +1,4 @@
-name: Block Ban
+name: BlockBan
 version: '0.1.0'
 main: com.floorplugins.blockban.BlockBan
 api-version: '1.21'
