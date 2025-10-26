@@ -1,0 +1,63 @@
+########################################################################################
+# Block Ban Configuration                                                              #
+#                                                                                      #
+# This config allows you to ban blocks per world or server-wide,                       #
+# with customizable messages for each banned block.                                    #
+#                                                                                      #
+# Features:                                                                            #
+#  - Multi-world support: define banned blocks for each world individually             #
+#  - Server-wide bans: blocks banned in all worlds via "__server__" section            #
+#  - Multi-level messaging:                                                            #
+#       * Block-specific message (highest priority)                                    #
+#       * World-specific message (fallback if block message missing)                   #
+#       * Global default message (fallback if neither block nor world message present) #
+#  - MiniMessage formatting supported for messages (<red>, <bold>, <italic>, etc.)     #
+#  - Efficient: only triggers on block placement, no world scanning                    #
+#                                                                                      #
+# How to use:                                                                          #
+#  1. default-banned-message: sets the global fallback message                         #
+#  2. worlds:                                                                          #
+#       - <world_name>: configure banned blocks for that world                         #
+#         - banned-message: optional fallback message for the world                    #
+#         - banned-blocks: list of banned blocks and optional messages                 #
+#  3. __server__: special section for server-wide banned blocks                        #
+#                                                                                      #
+# Example:                                                                             #
+#   default-banned-message: "<red>You cannot place that block!</red>"                  #
+#                                                                                      #
+#   worlds:                                                                            #
+#     world:                                                                           #
+#       banned-blocks:                                                                 #
+#         TNT:                                                                         #
+#           banned-message: "<red>You cannot place TNT!</red>"                         #
+#         OBSIDIAN: {}                                                                 #
+#     __server__:                                                                      #
+#       banned-blocks:                                                                 #
+#                                                                                      #
+# Notes:                                                                               #
+#  - Block names must match Material enum names (case-insensitive)                     #
+#  - Messages support MiniMessage formatting                                           #
+#  - Leaving a message blank will fallback to world/global message                     #
+########################################################################################
+
+default-banned-message: "<red>You cannot place that block!</red>"
+
+worlds:
+  # This section is specific to the overworld. Please change if your overworld has a different name.
+  world:
+    # This is optional, the default banned message will be used if not specified here.
+    banned-message: "<red>You cannot place that block!</red>"
+
+    # Leaving this empty is the same as not including this world in the list.
+    banned-blocks:
+      TNT:
+        banned-message: "<red>You cannot place TNT!</red>"
+
+      # No banned message is specified here, so the world's message will be used.
+      OBSIDIAN: {}
+
+  # This section contains server-wide block bans.
+  __server__:
+    banned-blocks:
+      TNT:
+        banned-message: "<red>You cannot place TNT! In the overworld, this message will be overwritten.</red>"
