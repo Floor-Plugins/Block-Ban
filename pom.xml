@@ -5,11 +5,11 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>com.floorplugins</groupId>
-    <artifactId>block_ban</artifactId>
+    <artifactId>block-ban</artifactId>
     <version>0.1.0</version>
     <packaging>jar</packaging>
 
-    <name>block_ban</name>
+    <name>Block Ban</name>
 
     <properties>
         <java.version>21</java.version>

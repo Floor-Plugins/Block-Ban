@@ -1,6 +1,6 @@
 name: Block Ban
 version: '0.1.0'
-main: com.floorplugins.block_ban.BlockBan
+main: com.floorplugins.blockban.BlockBan
 api-version: '1.21'
 authors: [ Floor-Plugins ]
 description: Ban blocks from being placed in certain worlds

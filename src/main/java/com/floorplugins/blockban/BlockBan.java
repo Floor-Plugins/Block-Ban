@@ -1,4 +1,4 @@
-package com.floorplugins.block_ban;
+package com.floorplugins.blockban;
 
 import net.kyori.adventure.text.Component;
 import net.kyori.adventure.text.minimessage.MiniMessage;

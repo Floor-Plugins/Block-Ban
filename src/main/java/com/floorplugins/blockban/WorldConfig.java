@@ -1,4 +1,4 @@
-package com.floorplugins.block_ban;
+package com.floorplugins.blockban;
 
 import org.bukkit.Material;
 
